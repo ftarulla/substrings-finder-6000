@@ -20,6 +20,7 @@
   <script src="./lib/react-dom.development.js" crossorigin="anonymous"></script>
   <script src="./lib/material-ui.development.js" crossorigin="anonymous"></script>
   <script src="./lib/babel.min.js" crossorigin="anonymous"></script>
+  <script src="./src/refreshbrowser.js" crossorigin="anonymous"></script>
 
   <script type="text/babel" type="module">
 const {
@@ -333,7 +334,7 @@ class App extends React.Component {
   }
 
   render() {
-    let title = "Substrings Finder 9000"
+    let title = "Substrings Finder 6000"
     let content = "Where am I?"
     const router = {
       current: () => this.state.path,
@@ -385,15 +386,7 @@ class App extends React.Component {
     )
   </script>
 
-  <!-- <button onclick="window.location.reload(true)">reload</button> -->
-
-  <script>
-    var ws = new WebSocket("ws://127.0.0.1:5678/")
-    ws.onmessage = function (event) {
-      console.log(event.data)
-      window.location.reload(true)
-    };
-  </script>
+  <button onclick="window.location.reload(true)">reload</button>
 </body>
 
 </html>

@@ -2,11 +2,7 @@ import sys
 import os
 import re
 import asyncio
-# import datetime
-# import random
 import websockets
-# import time
-# import subprocess
 
 def file_filter(name):
   def run_filters(name, filters):
@@ -28,9 +24,10 @@ async def refresh(websocket, path):
     max_mtime = max(file_times('.'))
     if max_mtime > last_mtime:
       last_mtime = max_mtime
+      await asyncio.sleep(1)
       await websocket.send('refresh')
     await asyncio.sleep(1)
 
-start_server = websockets.serve(refresh, "127.0.0.1", 5678)
+start_server = websockets.serve(refresh, "127.0.0.1", 8178)
 asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_forever()
