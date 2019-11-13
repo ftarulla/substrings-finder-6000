@@ -23,4 +23,4 @@ if __name__ == "__main__":
   src.close()
   dst.close()
 
-  print("Done!")
+  print("Done compiling!")

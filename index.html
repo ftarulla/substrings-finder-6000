@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>React Local</title>
+  <title>Substrings Finder</title>
 
   <!-- Fonts to support Material Design -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
@@ -333,7 +333,7 @@ class App extends React.Component {
   }
 
   render() {
-    let title = "Substrings Finder 6000"
+    let title = "Substrings Finder 9000"
     let content = "Where am I?"
     const router = {
       current: () => this.state.path,
@@ -385,6 +385,15 @@ class App extends React.Component {
     )
   </script>
 
+  <!-- <button onclick="window.location.reload(true)">reload</button> -->
+
+  <script>
+    var ws = new WebSocket("ws://127.0.0.1:5678/")
+    ws.onmessage = function (event) {
+      console.log(event.data)
+      window.location.reload(true)
+    };
+  </script>
 </body>
 
 </html>

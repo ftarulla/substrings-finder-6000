@@ -9,7 +9,7 @@ class App extends React.Component {
   }
 
   render() {
-    let title = "Substrings Finder 6000"
+    let title = "Substrings Finder 9000"
     let content = "Where am I?"
     const router = {
       current: () => this.state.path,
