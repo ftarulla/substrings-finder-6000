@@ -1,10 +1,10 @@
 import os
 import re
 
-def import_file(path, dst):
+def import_file(path, dst, leading_white_spaces):
   src = open(path, "r")
   for line in src:
-    dst.write(line)
+    dst.write((" " * leading_white_spaces) + line)
   src.close()
 
 if __name__ == "__main__":
@@ -16,7 +16,7 @@ if __name__ == "__main__":
     match = re.search(r"include\('(.+)'\)", line)
     if match:
       file = match.group(1)
-      import_file(file, dst)
+      import_file(file, dst, len(line) - len(line.lstrip()))
     else:
       dst.write(line)
 
