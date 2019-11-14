@@ -28,13 +28,32 @@ const useFetchDetails = (substring) => {
         setLoading(true)
         setError(null)
 
-        return getLocalAsJson(`uppercase?word=${substring}`)
+        return getLocalAsJson(`touppercase?word=${substring}`)
       })
       .then(function (response) {
         return response.json()
       })
       .then(function (json) {
         details["uppercase"] = json
+
+        setLoading(false)
+        if (details) {
+          setDetails(details)
+        } else {
+          setDetails([])
+        }
+      })
+      .then(function () {
+        setLoading(true)
+        setError(null)
+
+        return getLocalAsJson(`vowels?word=${substring}`)
+      })
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (json) {
+        details["vowels"] = json
 
         setLoading(false)
         if (details) {
@@ -83,6 +102,17 @@ function SubstringDetailsView(props) {
         id="outlined-read-only-input"
         label="En mayúsculas"
         defaultValue={details["uppercase"]}
+        className={classes.textFieldDetails}
+        margin="normal"
+        InputProps={{
+          readOnly: true,
+        }}
+        variant="outlined"
+      />
+      <TextField
+        id="outlined-read-only-input"
+        label="Vocales"
+        defaultValue={details["vowels"]}
         className={classes.textFieldDetails}
         margin="normal"
         InputProps={{

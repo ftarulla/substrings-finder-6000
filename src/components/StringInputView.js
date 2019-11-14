@@ -8,7 +8,7 @@ function StringInputView(props) {
     setValues({ ...values, [prop]: event.target.value });
   };
   const handleSend = text => {
-    getLocalAsJson(`substrings?text=${text}`)
+    getLocalAsJson(`substrings?sentence=${text}`)
       .then(function (response) {
         return response.json()
       })
