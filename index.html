@@ -380,6 +380,7 @@
         const router = {
           current: () => this.state.path,
           navigate: (path, state) => {
+            // http://es6-features.org/#SpreadOperator
             this.setState({ ...state, path: path })
           }
         }
@@ -427,7 +428,7 @@
     )
   </script>
 
-  <button onclick="window.location.reload(true)">reload</button>
+  <!-- <button onclick="window.location.reload(true)">reload</button> -->
 </body>
 
 </html>

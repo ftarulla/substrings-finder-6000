@@ -14,6 +14,7 @@ class App extends React.Component {
     const router = {
       current: () => this.state.path,
       navigate: (path, state) => {
+        // http://es6-features.org/#SpreadOperator
         this.setState({ ...state, path: path })
       }
     }
