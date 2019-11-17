@@ -2,7 +2,7 @@
 
 ## Servidor
 
-En la carpeta `server-services` se encuentra el archivo StringServer-cors.st con el servidor en Smalltalk. Para crear el servidor abrir un workspace y ejecutar:
+En la carpeta `server-services` se encuentra el archivo `StringServer-cors.st` con el servidor en Smalltalk. Para crear el servidor abrir un workspace y ejecutar:
 
 ```smalltalk
 server := StringServerController listeningOn: 8082.
@@ -22,7 +22,7 @@ Los servicios que brinda el servidor:
 - `vowels?word=${substring}`
 
 ## Cliente
-Hay dos formas de ejecutar/modificar el cliente.
+Hay dos formas de ejecutar/modificar el cliente:
 
 ### file://
 Se puede abrir el archivo `index.html` directamente en el browser. En este archivo está todo el código JavaScript.
@@ -37,7 +37,7 @@ Todo esto se _compila_ ejecutando `python ./scripts/compiler.py` y el resultado 
 - El paquete [`websockets`](https://websockets.readthedocs.io/en/stable/intro.html)
 
 #### Servidor del cliente
-Para ejecutar el servidor desde una terminal ejecutar:
+Para ejecutar el servidor (del cliente) desde una terminal ejecutar:
 ```shell-session
 ./server.sh
 ```
