@@ -71,6 +71,6 @@ server = HTTP::Server.new do |context|
   end
 end
 
-address = server.bind_tcp 8080
+address = server.bind_tcp 8082
 puts "Listening on http://#{address}"
 server.listen
